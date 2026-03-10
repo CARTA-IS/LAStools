@@ -111,6 +111,30 @@ For the binary download:
 2. unzip LAStools.zip to this directory
 3. run the LAStools executables
 
+## Docker
+
+Build and run LAStools using Docker:
+
+```bash
+docker build -t lastools .
+```
+
+Run a tool:
+
+```bash
+docker run --rm -v $(pwd):/data lastools lasinfo64 /data/input.las
+docker run --rm -v $(pwd):/data lastools las2las64 -i /data/input.las -o /data/output.laz
+docker run --rm -v $(pwd):/data lastools laszip64 -i /data/input.las -o /data/input.laz
+```
+
+Interactive shell:
+
+```bash
+docker run --rm -it -v $(pwd):/data lastools
+```
+
+Available tools: `laszip64`, `lasinfo64`, `las2las64`, `las2txt64`, `txt2las64`, `lasmerge64`, `lasindex64`, `lascopcindex64`, `lasdiff64`, `lasprecision64`
+
 ## Linux
 
 Detailed information at https://rapidlasso.de/lastools-linux/
@@ -123,7 +147,7 @@ Detailed information at https://rapidlasso.de/lastools-linux/
     wget https://downloads.rapidlasso.de/LAStools.tar.gz
     tar xvzf LAStools.tar.gz
     rm LAStools.tar.gz
-    
+
 2. install dependencies or expand your library path to catch the included libraries
    - install dependencies
     sudo apt-get install libjpeg62 libpng-dev libtiff-dev libjpeg-dev libz-dev libproj-dev liblzma-dev libjbig-dev libzstd-dev libgeotiff-dev libwebp-dev liblzma-dev libsqlite3-dev

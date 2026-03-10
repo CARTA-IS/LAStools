@@ -1,0 +1,17 @@
+.git
+.github
+build/
+bin64/
+*.o
+*.a
+*.so
+.vs/
+.vscode/
+*.user
+*.suo
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+dev/
