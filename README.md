@@ -133,6 +133,11 @@ Interactive shell:
 docker run --rm -it -v $(pwd):/data lastools
 ```
 
+### PointCloud bbox error 수정 script
+```bash
+docker run --rm -v $(pwd):/data lastools lasinfo64 /data/input.las --repair_dd
+```
+
 Available tools: `laszip64`, `lasinfo64`, `las2las64`, `las2txt64`, `txt2las64`, `lasmerge64`, `lasindex64`, `lascopcindex64`, `lasdiff64`, `lasprecision64`
 
 ## Linux
